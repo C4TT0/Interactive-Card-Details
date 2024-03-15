@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Card Details Form</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+    <script src="./main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="flex">
+        <section class="cards flex p-relative">
+            <div class="bg-img"></div>
+            <div class="cards-img p-absolute">
+                <div class="card-front flex flex-col">
+                    <div class="card-logo">
+                        <img src="./images/card-logo.svg" alt="">
+                    </div>
+                    <div class="card-text flex flex-col">
+                        <p id="card-number">
+                            0000 0000 0000 0000
+                        </p>
+                        <div class="card-details flex">
+                            <p id="card-name">Jane Appleseed</p>
+                            <p id="expiry">
+                              <span id="monthD">00</span>
+                              /
+                              <span id="yearD">00 </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-back flex centre-vertical">
+                  <p id="cvv">000</p>
+                </div>
+            </div>
+        </section>
+        <section class="form flex centre">
+          <form>
+            <div class="form-group flex flex-col">
+              <label for="name">Cardholder Name</label>
+              <input type="text" name="name" id="name" placeholder="e.g. Jane Appleseed">
+              <p id="nameErrText" class="errText"></p>
+            </div>
+            <div class="form-group flex flex-col">
+              <label for="card-no">Card Number</label>
+              <input type="text" name="card-no" id="card-no" maxlength="16" placeholder="e.g. 1234 5678 9123 0000">
+              <p id="numErrText" class="errText"></p>
+            </div>
+            <div class="form-group flex last-row">
+              <div class="exp-date flex flex-col">
+                <label for="exp-date">exp. date (mm/yy) </label>
+                <div class="exp-inp">
+                  <input type="text" name="exp-date" id="month" maxlength="2" placeholder="MM">
+                  <input type="text" name="exp-date" id="year" maxlength="2" placeholder="YY">
+                </div>
+                <p id="expErrText" class="errText"></p>
+              </div>
+              <div class="cvv flex flex-col">
+                <label for="cvv">cvv</label>
+                <input type="text" name="cvv" id="cvv-inp" maxlength="3" placeholder="eg. 123">
+                <p id="cvvErrText" class="errText"></p>
+              </div>
+            </div>
+            <button type="submit" class="confirm">Confirm</button>
+          </form>
+          <section class="thank hide flex flex-col centre">
+            <img src="./images/icon-complete.svg" alt="">
+            <p>Thank You!</p>
+            <span>We've added your card details</span>
+            <button class="continue" id="continue">Continue</button>
+          </section>
+        </section>
+    </main>
+  </body>
+</html>
